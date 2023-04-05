@@ -152,7 +152,7 @@ namespace fteng
 		}
 	}
 	
-	template<typename F> struct signal;
+	template<typename F> struct SignalImpl;
 
 	// A connection without auto disconnection
 	struct connection_raw
@@ -211,7 +211,7 @@ namespace fteng
 	};
 
 	template<typename ... A>
-	struct signal<void(A...)> : details::sig_base
+	struct SignalImpl<void(A...)> : details::sig_base
 	{
 		template<typename ... ActualArgsT>
 		void operator()(ActualArgsT&& ... args) const
