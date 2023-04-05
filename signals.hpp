@@ -214,7 +214,7 @@ namespace fteng
 	struct SignalImpl<void(A...)> : details::sig_base
 	{
 		template<typename ... ActualArgsT>
-		void operator()(ActualArgsT&& ... args) const
+		void emit(ActualArgsT&& ... args) const
 		{
 			bool recursion = calling;
 			if (!calling) calling = 1;
